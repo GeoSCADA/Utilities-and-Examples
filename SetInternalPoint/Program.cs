@@ -85,6 +85,16 @@ namespace SetInternalPoint
 				Console.WriteLine("Error setting value. " + e.Message);
 				return 1;
 			}
+			// Demo to read historic
+			/*
+			var pointObject2 = connection.GetObject("Example Projects.Oil and Gas.Transportation.Inflow Computer.GasFlow");
+			DateTime hisStart = new DateTime(2021, 1, 19, 0, 0, 0);
+			DateTime hisEnd = new DateTime(2021, 1, 20, 0, 0, 0);
+			object[] hisArgs = { hisStart, hisEnd, 0, 1000, true, "All" };
+			var hisResult = pointObject2.InvokeMethod("Historic.RawValues", hisArgs);
+			Console.WriteLine(hisResult);
+			Console.ReadKey();
+			*/
 			connection.Disconnect();
 			return 0;
 		}
