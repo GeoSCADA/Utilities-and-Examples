@@ -3,6 +3,8 @@ Geo SCADA Utilities and Example Code
 
 Sample code of useful and example utilities using the ClearSCADA / Geo SCADA APIs.
 
+API Documentation is a help file installed by Geo SCADA. Find this on the Start menu in the EcoStruxure Geo SCADA group. It is called 'Client API Guide'.
+
 When building, don't forget to remove and re-add ClearSCADA references so they match your installed version!
 
 # ListReferences
