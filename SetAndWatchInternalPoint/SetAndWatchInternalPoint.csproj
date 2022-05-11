@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SetAndWatchInternalPoint</RootNamespace>
     <AssemblyName>SetAndWatchInternalPoint</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
@@ -34,8 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ClearScada.Client">
-      <HintPath>c:\Program Files\Schneider Electric\ClearSCADA\ClearScada.Client.dll</HintPath>
+    <Reference Include="ClearScada.Client, Version=6.85.7779.3, Culture=neutral, PublicKeyToken=9e16b9dd55e2cd53, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\Schneider Electric\ClearSCADA\ClearScada.Client.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
