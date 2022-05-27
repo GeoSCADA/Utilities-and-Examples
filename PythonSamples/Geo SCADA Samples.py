@@ -1,8 +1,6 @@
-# Import .Net runtime support - needs "pip install pythonnet"
-# Use Python up to 3.8 (pythonnet has yet to get 3.9 support).
+# Import .Net runtime support - needs "pip install pythonnet", supported by Python 3.8 
 import clr
-
-# Get Geo SCADA Library (could use the namespace if the dll is on PATH)
+# Get Geo SCADA Library
 CS = clr.AddReference( "c:\Program Files\Schneider Electric\ClearSCADA\ClearSCADA.Client.dll" )
 import ClearScada.Client as CSClient 
 
@@ -10,7 +8,7 @@ import ClearScada.Client as CSClient
 node = CSClient.ServerNode( CSClient.ConnectionType.Standard, "127.0.0.1", 5481 )
 connection = CSClient.Simple.Connection( "Utility" )
 connection.Connect( node )
-connection.LogOn( "AdminExample", "AdminExample" )
+connection.LogOn( "AdminExample", "your password" )
 
 # instance a template
 P = connection.GetObject("Test") #parent
