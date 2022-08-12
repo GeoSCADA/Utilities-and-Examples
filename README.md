@@ -22,6 +22,9 @@ A utility to find the animations on a mimic and export to a script you can use t
 # ListReferences
 A utility to find the references from an object in the Geo SCADA database.
 
+# MimicGrabber
+Get a screenshot of one or more mimics automatically. This program will let you select which mimics to get screenshots, and save then in PNG format.
+
 # PythonSample
 How to use Python to interact with Geo SCADA using the .Net Client API.
 
