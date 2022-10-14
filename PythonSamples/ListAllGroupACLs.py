@@ -8,7 +8,7 @@ import ClearScada.Client as CSClient
 node = CSClient.ServerNode( CSClient.ConnectionType.Standard, "127.0.0.1", 5481 )
 connection = CSClient.Simple.Connection( "Utility" )
 connection.Connect( node )
-connection.LogOn( "AdminExample", "AdminExample") #"your password" )
+connection.LogOn( "your user", "your password" )
 
 # Functions to iterate over all groups and return permissions applied
 # Note that for a large database this can take a long time to run and
