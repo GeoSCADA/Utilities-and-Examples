@@ -1,4 +1,4 @@
-# Import .Net runtime support - needs "pip install pythonnet", supported by Python 3.8 
+# Import .Net runtime support - needs "pip install pythonnet", supported by Python 3.8, 3.9?
 import clr
 # Get Geo SCADA Library
 CS = clr.AddReference( "c:\Program Files\Schneider Electric\ClearSCADA\ClearSCADA.Client.dll" )
@@ -9,6 +9,14 @@ node = CSClient.ServerNode( CSClient.ConnectionType.Standard, "127.0.0.1", 5481 
 connection = CSClient.Simple.Connection( "Utility" )
 connection.Connect( node )
 connection.LogOn( "AdminExample", "your password" )
+
+# Read Security ACLs
+R = connection.GetObject("$Root")
+ACL = R.GetSecurity()
+if (ACL.InheritedFromParent == False):
+    print( "ACL ", ACL.Count, " entries")
+    for user in ACL.Keys:
+        print( "Key: ", user, " ACL: ", ACL[ user] )
 
 # instance a template
 P = connection.GetObject("Test") #parent
