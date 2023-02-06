@@ -8,11 +8,11 @@ serverIP = "127.0.0.1"
 serverPort = 5481
 systemName = "Local"
 
-# User and password - IMPORTANT - Set Severity to None,
-# or your system will be *swamped* by event logging!
+# Access details for your system - IMPORTANT - Set the user object's Severity to None,
+# or your system will be swamped by event logging!
 
-# ENTER YOUR USERNAME AND PASSWORD HERE FOR A SIMULATOR USER
-
+# ENTER CREDENTIALS HERE FOR A SIMULATOR USER - YOU ARE RESPONSIBLE FOR ALTERING THIS
+# AND KEEPING CREDENTIALS SAFE.
 username = ""
 password = ""
 
