@@ -127,7 +127,6 @@ Partial Class Form1
 		Me.Username.Name = "Username"
 		Me.Username.Size = New System.Drawing.Size(130, 22)
 		Me.Username.TabIndex = 1
-		Me.Username.Text = "Serck"
 		'
 		'Label1
 		'
@@ -188,7 +187,6 @@ Partial Class Form1
 		Me.Password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
 		Me.Password.Size = New System.Drawing.Size(130, 22)
 		Me.Password.TabIndex = 8
-		Me.Password.Text = "Snoopy"
 		'
 		'LastChanged
 		'
@@ -687,7 +685,7 @@ Partial Class Form1
 		Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.HelpToolStripMenuItem})
 		Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
 		Me.MenuStrip1.Name = "MenuStrip1"
-		Me.MenuStrip1.Size = New System.Drawing.Size(1318, 28)
+		Me.MenuStrip1.Size = New System.Drawing.Size(1318, 30)
 		Me.MenuStrip1.TabIndex = 28
 		Me.MenuStrip1.Text = "MenuStrip1"
 		'
@@ -695,7 +693,7 @@ Partial Class Form1
 		'
 		Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem, Me.OpenToolStripMenuItem, Me.toolStripSeparator, Me.SaveToolStripMenuItem, Me.SaveAsToolStripMenuItem, Me.toolStripSeparator1, Me.toolStripSeparator2, Me.ExitToolStripMenuItem})
 		Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-		Me.FileToolStripMenuItem.Size = New System.Drawing.Size(46, 24)
+		Me.FileToolStripMenuItem.Size = New System.Drawing.Size(46, 26)
 		Me.FileToolStripMenuItem.Text = "&File"
 		'
 		'NewToolStripMenuItem
@@ -756,32 +754,32 @@ Partial Class Form1
 		'
 		Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AdvancedToolStripMenuItem})
 		Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
-		Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(58, 24)
+		Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(58, 26)
 		Me.ToolsToolStripMenuItem.Text = "&Tools"
 		'
 		'AdvancedToolStripMenuItem
 		'
 		Me.AdvancedToolStripMenuItem.Name = "AdvancedToolStripMenuItem"
-		Me.AdvancedToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+		Me.AdvancedToolStripMenuItem.Size = New System.Drawing.Size(158, 26)
 		Me.AdvancedToolStripMenuItem.Text = "Advanced"
 		'
 		'HelpToolStripMenuItem
 		'
 		Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.CommandLineToolStripMenuItem})
 		Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-		Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(55, 24)
+		Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(55, 26)
 		Me.HelpToolStripMenuItem.Text = "&Help"
 		'
 		'AboutToolStripMenuItem
 		'
 		Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-		Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+		Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(192, 26)
 		Me.AboutToolStripMenuItem.Text = "&About"
 		'
 		'CommandLineToolStripMenuItem
 		'
 		Me.CommandLineToolStripMenuItem.Name = "CommandLineToolStripMenuItem"
-		Me.CommandLineToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+		Me.CommandLineToolStripMenuItem.Size = New System.Drawing.Size(192, 26)
 		Me.CommandLineToolStripMenuItem.Text = "&Command Line"
 		'
 		'SettingsFileName

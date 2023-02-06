@@ -7,6 +7,17 @@ API Documentation is a help file installed by Geo SCADA. Find this on the Start 
 
 When building, don't forget to remove and re-add ClearSCADA references so they match your installed version!
 
+
+**********************************************************************
+SAMPLE CODE FOR EDUCATION ONLY. THIS CODE MAY NOT BE CYBER-SECURE.
+YOU ARE RESPONSIBLE FOR IMPLEMENTING CYBER-SECURITY FEATURES.
+**********************************************************************
+
+The source code is available for you to freely use, modify and extend to 
+suit your requirements or that of your clients. It is perhaps not the 
+most optimized, efficient or elegant code but we hope that its simplicity 
+will encourage engagement with Geo SCADA.
+
 # EventWatcher
 Register interest in the stream of Events from a server, and receive callbacks when events match.
 
