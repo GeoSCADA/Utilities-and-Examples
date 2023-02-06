@@ -25,7 +25,7 @@ namespace SetInternalPoint
 			}
 
 			ClearScada.Client.Simple.Connection connection;
-			var node = new ClearScada.Client.ServerNode(ClearScada.Client.ConnectionType.Standard, "127.0.0.1", 5481);
+			var node = new ClearScada.Client.ServerNode("127.0.0.1", 5481);
 			connection = new ClearScada.Client.Simple.Connection("Utility");
 			try
 			{

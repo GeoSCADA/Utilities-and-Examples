@@ -21,13 +21,19 @@ namespace EventWatcher
 			string pass = args[1];
 
 			ClearScada.Client.Simple.Connection connection;
-			var node = new ClearScada.Client.ServerNode(ClearScada.Client.ConnectionType.Standard, "127.0.0.1", 5481);
+			// Older Geo SCADA uses param: ClearScada.Client.ConnectionType.Standard
+			var node = new ClearScada.Client.ServerNode("127.0.0.1", 5481);
 			connection = new ClearScada.Client.Simple.Connection("Utility");
 			IServer AdvConnection;
 			try
 			{
 				connection.Connect(node);
-				AdvConnection = node.Connect("Utility", false);
+				//AdvConnection = node.Connect("SeverityCleaner");									// Up to v80
+				//AdvConnection = node.Connect("SeverityCleaner", false);							// From v81 to v84
+				var conSettings = new ClientConnectionSettings();                                   // From v85 onwards
+				conSettings.IsLimited = false;                                                      // From v85 onwards
+				conSettings.IsVirtualized = false;                                                  // From v85 onwards
+				AdvConnection = node.Connect("SeverityCleaner", conSettings);                       // From v85 onwards
 			}
 			catch (CommunicationsException)
 			{

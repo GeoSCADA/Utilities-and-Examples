@@ -24,10 +24,11 @@ namespace ListReferences
 									" Output: object name, type, referenced object name, type ");
 				return;
 			}
-			var node = new ClearScada.Client.ServerNode(ClearScada.Client.ConnectionType.Standard, args[0], int.Parse(args[1]));
+			var node = new ClearScada.Client.ServerNode(args[0], int.Parse(args[1]));
 			var connection = new ClearScada.Client.Simple.Connection("Utility");
 			connection.Connect(node);
-			var AdvConnection = node.Connect("UtilityA", false);
+			var ConSet = new ClearScada.Client.ClientConnectionSettings();
+			var AdvConnection = node.Connect("UtilityA", ConSet);
 			using (var spassword = new System.Security.SecureString())
 			{
 				foreach (var c in args[3])

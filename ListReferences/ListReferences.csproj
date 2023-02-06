@@ -37,7 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ClearScada.Client">
-      <HintPath>..\..\ClearSCADA\Binaries\X64\Release\ClearScada.Client.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files\Schneider Electric\ClearSCADA\ClearScada.Client.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

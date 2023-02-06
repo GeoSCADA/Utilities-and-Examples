@@ -10,7 +10,8 @@ from System import DateTime # Support .Net date/time
 node = CSClient.ServerNode( "127.0.0.1", 5481 )
 connection = CSClient.Simple.Connection( "Utility" )
 connection.Connect( node )
-connection.LogOn( "AdminExample", "enter your password here" )
+connection.LogOn( "", "" ) # ENTER YOUR USERNAME AND PASSWORD HERE
+
 
 # Open file
 

@@ -12,7 +12,7 @@ namespace ViewXAPI1
 		static void Main(string[] args)
 		{
 			ViewX.Application a = new ViewX.Application();
-			a.Logon("Local", "s", "s");
+			a.Logon("Local", "", ""); // ENTER USERNAME AND PASSWORD HERE
 			a.Mimics.OpenFromServer(false, "Local", "");
 			a.Visible = true;
 			ViewX.Mimic oMimic = (Mimic) a.Mimics.OpenFromServer(false, "Local", "New Mimic");

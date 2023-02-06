@@ -8,8 +8,9 @@ namespace InsertHistoricData
 	{
 		static void Main()
 		{
-			string user = "AdminExample";
-			string pass = "AdminExample";
+			// EDIT YOUR CREDENTIALS, OR PASS IN AS ARGUMENTS - PLEASE CHOOSE YOUR OWN METHOD
+			string user = "";
+			string pass = "";
 
 			ClearScada.Client.Simple.Connection connection;
 			var node = new ClearScada.Client.ServerNode("127.0.0.1", 5481);

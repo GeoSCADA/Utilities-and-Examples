@@ -9,7 +9,7 @@ from System import DateTime # Support .Net date/time
 node = CSClient.ServerNode( CSClient.ConnectionType.Standard, "127.0.0.1", 5481 )
 connection = CSClient.Simple.Connection( "Utility" )
 connection.Connect( node )
-connection.LogOn( "AdminExample", "your credentials here" )
+connection.LogOn( "", "" ) # ENTER YOUR USERNAME AND PASSWORD HERE
 
 # Find a historic point      
 pointObject2 = connection.GetObject("Test.New Analog Point" )

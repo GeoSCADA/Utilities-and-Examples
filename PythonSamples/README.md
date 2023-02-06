@@ -12,3 +12,13 @@ After installing, add pythonnet by opening the command line and typing
  pip install Pythonnet
 
 To use these examples please enter your Geo SCADA login credentials into the code.
+
+**********************************************************************
+SAMPLE CODE FOR EDUCATION ONLY. THIS CODE MAY NOT BE CYBER-SECURE.
+YOU ARE RESPONSIBLE FOR IMPLEMENTING CYBER-SECURITY FEATURES.
+**********************************************************************
+
+The source code is available for you to freely use, modify and extend to 
+suit your requirements or that of your clients. It is perhaps not the 
+most optimized, efficient or elegant code but we hope that its simplicity 
+will encourage engagement with Geo SCADA.

@@ -10,8 +10,11 @@ systemName = "Local"
 
 # User and password - IMPORTANT - Set Severity to None,
 # or your system will be *swamped* by event logging!
-username = "SimUserNoLog"
-password = "simuserpassword"
+
+# ENTER YOUR USERNAME AND PASSWORD HERE FOR A SIMULATOR USER
+
+username = ""
+password = ""
 
 # Simulation load
 updatesPerBatch = 250 # Edit to change how many points change in a batch

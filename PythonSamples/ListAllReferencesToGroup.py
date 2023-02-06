@@ -12,7 +12,7 @@ node = CSClient.ServerNode( "127.0.0.1", 5481 )
 connection = CSClient.Simple.Connection( "Utility" )
 connection.Connect( node )
 #You could prompt user for this
-connection.LogOn( "AdminExample", "enter your password here" )
+connection.LogOn( "", "" ) # ENTER YOUR USERNAME AND PASSWORD HERE
 
 #Type the group to be reference-checked here
 #You could prompt user for this

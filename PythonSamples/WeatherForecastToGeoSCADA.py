@@ -9,7 +9,7 @@ node = CSClient.ServerNode( "127.0.0.1", 5481 )
 connection = CSClient.Simple.Connection( "Utility" )
 connection.Connect( node )
 # Add your credentials to Geo SCADA here:
-connection.LogOn( "AdminExample", "your credentials" )
+connection.LogOn( "", "" ) # ENTER YOUR USERNAME AND PASSWORD HERE
 
 # Web request library - needs "pip install requests"
 import requests
