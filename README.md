@@ -12,6 +12,9 @@ When building, don't forget to remove and re-add ClearSCADA references so they m
 SAMPLE CODE FOR EDUCATION ONLY. THIS CODE MAY NOT BE CYBER-SECURE.
 YOU ARE RESPONSIBLE FOR IMPLEMENTING CYBER-SECURITY FEATURES.
 **********************************************************************
+This is offered as source code which you can build with Visual 
+Studio. It is not supported or warranted in any way by Schneider Electric.
+**********************************************************************
 
 The source code is available for you to freely use, modify and extend to 
 suit your requirements or that of your clients. It is perhaps not the 
