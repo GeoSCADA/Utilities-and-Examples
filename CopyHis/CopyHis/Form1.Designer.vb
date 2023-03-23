@@ -57,7 +57,7 @@ Partial Class Form1
 		Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StatusLabel})
 		Me.StatusStrip1.Location = New System.Drawing.Point(0, 316)
 		Me.StatusStrip1.Name = "StatusStrip1"
-		Me.StatusStrip1.Size = New System.Drawing.Size(670, 26)
+		Me.StatusStrip1.Size = New System.Drawing.Size(948, 26)
 		Me.StatusStrip1.TabIndex = 1
 		Me.StatusStrip1.Text = "StatusStrip1"
 		'
@@ -73,7 +73,7 @@ Partial Class Form1
 		Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.HelpToolStripMenuItem})
 		Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
 		Me.MenuStrip1.Name = "MenuStrip1"
-		Me.MenuStrip1.Size = New System.Drawing.Size(670, 28)
+		Me.MenuStrip1.Size = New System.Drawing.Size(948, 28)
 		Me.MenuStrip1.TabIndex = 30
 		Me.MenuStrip1.Text = "MenuStrip1"
 		'
@@ -261,7 +261,7 @@ Partial Class Form1
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(670, 342)
+		Me.ClientSize = New System.Drawing.Size(948, 342)
 		Me.Controls.Add(Me.Label5)
 		Me.Controls.Add(Me.Label4)
 		Me.Controls.Add(Me.JournalFolder)

@@ -86,6 +86,11 @@ Public Class Form1
         Me.UseWaitCursor = True
         StatusLabel.Text = "Sizing"
         StopProcessing = False
+        HisBytes = 0
+        JnlBytes = 0
+        HisCount = 0
+        JnlCount = 0
+        SizeBytes = 0
 
         If CopyHistory.Checked = True Then
             'Carefully worked out to match SCX file numbering by trial and error
@@ -261,7 +266,7 @@ Public Class Form1
                     FileNum = CLng(aFile.Name.Substring(Prefix.Length, aFile.Name.Length - Prefix.Length - Extension.Length))
                     If FileNum >= StartNum And FileNum <= EndNum Then
                         'Size
-                        FileLen = FileLen + aFile.Length
+                        FileLen = aFile.Length
                         If Extension = ".HRD" Then
                             HisCount += 1
                             HisBytes += FileLen
@@ -270,7 +275,7 @@ Public Class Form1
                             JnlBytes += FileLen
                         End If
                         SizeBytes = SizeBytes + FileLen
-                        StatusLabel.Text = "Size so far: " & SizeBytes.ToString
+                        StatusLabel.Text = "Size so far: " & SizeBytes.ToString("000,000,000,000")
                     End If
                 Catch
                     StatusLabel.Text = "Size Fault with: " & aFile.FullName
