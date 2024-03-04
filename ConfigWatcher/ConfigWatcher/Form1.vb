@@ -49,8 +49,9 @@ Public Class Form1
                 NotifyIcon1.Visible = False
                 Exit Sub
             End Try
-            ' Removed for GS 2022 ConnectionType.Standard, 
-            Dim Node As New ClearScada.Client.ServerNode(ServerName.Text, ServerPort.Text)
+#Disable Warning BC40000, BC40008
+            Dim Node As New ClearScada.Client.ServerNode(ConnectionType.Standard, ServerName.Text, ServerPort.Text)
+#Enable Warning BC40000, BC40008
 
             Log.WriteToLog("Export Login: " & ServerName.Text & "," & ServerPort.Text & "," & Username.Text)
             Dim GeoSCADA As New Connection("ConfigWatcher")

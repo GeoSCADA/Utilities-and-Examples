@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ClearScada;
+using ClearScada.Client;
 
 namespace ListReferences
 {
@@ -24,11 +24,11 @@ namespace ListReferences
 									" Output: object name, type, referenced object name, type ");
 				return;
 			}
-			var node = new ClearScada.Client.ServerNode(args[0], int.Parse(args[1]));
+#pragma warning disable 612, 618
+			var node = new ClearScada.Client.ServerNode(ConnectionType.Standard, args[0], int.Parse(args[1]));
 			var connection = new ClearScada.Client.Simple.Connection("Utility");
 			connection.Connect(node);
-			var ConSet = new ClearScada.Client.ClientConnectionSettings();
-			var AdvConnection = node.Connect("UtilityA", ConSet);
+			var AdvConnection = node.Connect("UtilityA" );
 			using (var spassword = new System.Security.SecureString())
 			{
 				foreach (var c in args[3])
@@ -38,6 +38,7 @@ namespace ListReferences
 				connection.LogOn(args[2], spassword);
 				AdvConnection.LogOn(args[2], spassword);
 			}
+#pragma warning restore 612, 618
 			string sql = args[4];
 			ClearScada.Client.Advanced.IQuery serverQuery = AdvConnection.PrepareQuery(sql, new ClearScada.Client.Advanced.QueryParseParameters());
 			ClearScada.Client.Advanced.QueryResult queryResult = serverQuery.ExecuteSync(new ClearScada.Client.Advanced.QueryExecuteParameters());
@@ -50,6 +51,17 @@ namespace ListReferences
 					{
 						string fullname = (string)e.Current.Data[0];
 						var dbobject = connection.GetObject(fullname);
+						///
+						var classdef = dbobject.ClassDefinition;
+						var bc = classdef.BaseClass;
+						var dc = classdef.DerivedClasses;
+						var am = AdvConnection.GetMetadata(true, true);
+						var af = dbobject.Aggregates;
+						var af2 = dbobject.ClassDefinition;
+						var af3 = bc.ConfigurationProperties;
+						var af4 = bc.DataProperties;
+
+						///
 						var reflist = dbobject.GetReferencesFrom();
 						if (reflist.Count == 0)
 						{

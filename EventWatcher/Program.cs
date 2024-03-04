@@ -21,25 +21,22 @@ namespace EventWatcher
 			string pass = args[1];
 
 			ClearScada.Client.Simple.Connection connection;
-			// Older Geo SCADA uses param: ClearScada.Client.ConnectionType.Standard
-			var node = new ClearScada.Client.ServerNode("127.0.0.1", 5481);
+// Make version-independent
+#pragma warning disable 612, 618
+			var node = new ClearScada.Client.ServerNode(ConnectionType.Standard, "127.0.0.1", 5481);
 			connection = new ClearScada.Client.Simple.Connection("Utility");
 			IServer AdvConnection;
 			try
 			{
 				connection.Connect(node);
-				//AdvConnection = node.Connect("SeverityCleaner");									// Up to v80
-				//AdvConnection = node.Connect("SeverityCleaner", false);							// From v81 to v84
-				var conSettings = new ClientConnectionSettings();                                   // From v85 onwards
-				conSettings.IsLimited = false;                                                      // From v85 onwards
-				conSettings.IsVirtualized = false;                                                  // From v85 onwards
-				AdvConnection = node.Connect("SeverityCleaner", conSettings);                       // From v85 onwards
+				AdvConnection = node.Connect("SeverityCleaner");
 			}
 			catch (CommunicationsException)
 			{
 				Console.WriteLine("Unable to communicate with Geo SCADA server.");
 				return;
 			}
+#pragma warning restore 612, 618
 			if (!connection.IsConnected)
 			{
 				Console.WriteLine("Not connected to Geo SCADA server.");

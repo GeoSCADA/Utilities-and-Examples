@@ -4,9 +4,9 @@ Some simple files showing how to use Python to interact with Geo SCADA using the
 Filenames indicate the functions they demonstrate.
 
 Please note that the popular 'Pythonnet' library is used to call .Net functions. This is
-supported on Python versions up to 3.8 and perhaps more currently.
+supported on Python versions up to 3.8, 3.12 and perhaps others).
 
-Download Python from https://www.python.org/ftp/python/3.8.10/python-3.8.10-amd64.exe
+Download Python (e.g. from https://www.python.org/ftp/python/3.8.10/python-3.8.10-amd64.exe)
 After installing, add pythonnet by opening the command line and typing
 
  pip install Pythonnet

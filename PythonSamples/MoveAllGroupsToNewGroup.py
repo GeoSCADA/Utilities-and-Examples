@@ -1,4 +1,4 @@
-# Import .Net runtime support - needs "pip install pythonnet", supported by Python 3.8 
+# Import .Net runtime support - needs "pip install pythonnet", supported by Python 3.8, 3.12
 import clr
 # Get Geo SCADA Library
 CS = clr.AddReference( "c:\Program Files\Schneider Electric\ClearSCADA\ClearSCADA.Client.dll" )

@@ -25,11 +25,12 @@ namespace SetStaticLocation
 									" Example: SetStaticLocation localhost 5481 user password \"group1.group2.objectname\" 1.234 5.678");
 				return;
 			}
-			var node = new ClearScada.Client.ServerNode(args[0], int.Parse(args[1]));
+#pragma warning disable 612, 618
+			var node = new ClearScada.Client.ServerNode(ClearScada.Client.ConnectionType.Standard, args[0], int.Parse(args[1]));
 			var connection = new ClearScada.Client.Simple.Connection("UtilityB1");
 			connection.Connect(node);
-			var ConSet = new ClearScada.Client.ClientConnectionSettings();
-			var AdvConnection = node.Connect("UtilityB2", ConSet);
+			var AdvConnection = node.Connect("UtilityB2");
+#pragma warning restore 612, 618
 			using (var spassword = new System.Security.SecureString())
 			{
 				foreach (var c in args[3])

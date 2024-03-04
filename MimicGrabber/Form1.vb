@@ -63,7 +63,9 @@ Public Class Form1
 
             CaptureScreen(txtSystem.Text, txtMimic.Text, Filename)
         Else
-            Dim Node As ClearScada.Client.ServerNode = New ClearScada.Client.ServerNode(txtNode.Text, txtPort.Text)
+#Disable Warning BC40000, BC40008
+            Dim Node As New ClearScada.Client.ServerNode(ConnectionType.Standard, txtNode.Text, txtPort.Text)
+#Enable Warning BC40000, BC40008
             Dim CSconnection As Connection = New Connection(txtSystem.Text)
             CSconnection.Connect(Node)
             Dim SPassword As New System.Security.SecureString

@@ -36,7 +36,7 @@ Public Class Form1
         Else
             FromDate.Value = Now.AddDays(-31)
             ToDate.Value = Now.AddDays(-1)
-            DatabaseFolder.Text = "C:\ProgramData\Schneider Electric\ClearSCADA\Database"
+            DatabaseFolder.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Schneider Electric\ClearSCADA", "HistoricPath", "C:\ProgramData\Schneider Electric\ClearSCADA\Database\History")
             DestinationFolder.Text = "C:\ProgramData\Schneider Electric\ClearSCADA\Database-Copy"
             CopyHistory.Checked = True
             CopyJournal.Checked = True

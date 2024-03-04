@@ -13,9 +13,11 @@ namespace InsertHistoricData
 			string pass = "";
 
 			ClearScada.Client.Simple.Connection connection;
-			var node = new ClearScada.Client.ServerNode("127.0.0.1", 5481);
+#pragma warning disable 612, 618
+			var node = new ClearScada.Client.ServerNode(ConnectionType.Standard, "127.0.0.1", 5481);
 			connection = new ClearScada.Client.Simple.Connection("Utility");
 			connection.Connect(node);
+#pragma warning restore 612, 618
 			var spassword = new System.Security.SecureString();
 			foreach (var c in pass)  spassword.AppendChar(c); 
 			connection.LogOn(user, spassword);
