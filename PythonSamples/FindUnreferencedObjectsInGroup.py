@@ -13,36 +13,43 @@ connection.LogOn( "", "" ) # ENTER YOUR USERNAME AND PASSWORD HERE
 
 #Type the group to be reference-checked here
 #You could prompt user for this
-GroupName = "Example Projects.Oil and Gas"
+GroupName = "$Root"
+TypeName = "CMimic"
+DeleteIt = False
 
 GroupToRef = connection.GetObject(GroupName)
 
-def GetRefs( MyObject, GroupName):
+def GetRefs( MyObject, DeleteIt):
     c = 0
     # List references here
     ReferencedObjects = MyObject.GetReferencesTo()
-    # for all referenced
-    for RefObj in ReferencedObjects:
-        # if the path lies outside our group
-        if (not RefObj.FullName.startswith( GroupName + ".")):
-            print( "Object: ", MyObject.FullName, "(" + MyObject.ClassDefinition.Name +")")
-            print( "  Reference: ", RefObj.FullName, "("+RefObj.ClassDefinition.Name +")")
-            c += 1
+    if (len(ReferencedObjects) == 0):
+        print( "Object: ", MyObject.FullName, "(" + MyObject.ClassDefinition.Name +")")
+        if (DeleteIt):
+            # only delete if the text "Template" is not present in the name
+            if ("template" not in MyObject.FullName.lower()):
+                MyObject.Delete( False)
+                print("Deleted")
+            else:
+                print("Did not delete")
+        c += 1
     return c
 
-def ListReferences( GroupToRef, GroupName):
+def ListReferences( GroupToRef, TypeName, DeleteIt):
     c = 0
     # Get all child members of the root
     Children = GroupToRef.GetChildren( "","")
 
     # get all children
     for ChildObj in Children:
-        c += GetRefs( ChildObj, GroupName)
+        #print (ChildObj.ClassDefinition.Name, TypeName)
+        if (ChildObj.ClassDefinition.Name == TypeName):
+            c += GetRefs( ChildObj, DeleteIt)
         # recurse down groups
         if (ChildObj.IsGroup):
-            c += ListReferences(ChildObj, GroupName)
+            c += ListReferences(ChildObj, TypeName, DeleteIt)
     return c
 
-c = ListReferences( GroupToRef, GroupName)
-print( "Found: " + str(c) + " references.")
+c = ListReferences( GroupToRef, TypeName, DeleteIt)
+print( "Found: " + str(c) + " with no references.")
 
